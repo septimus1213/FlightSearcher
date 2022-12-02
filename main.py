@@ -14,13 +14,17 @@ city_lst = dataman.page_data
 
 for route in city_lst:
 
-    FlightSearch(
-        apikey=API_KEY,
-        from_airport= MY_AIRPORT,
-        to_airport= route["iataCode"],
-        price= route["lowestPrice"],
-        n_days= 30,                         #Look for deals up to "n_days"
-        stopovers= 0,                       #Maximum stopovers 0 for direct flights
-        email= MY_EMAIL,
-        email_pass= EMAIL_PASS
-        )
+    try:
+        FlightSearch(
+            apikey=API_KEY,
+            from_airport= MY_AIRPORT,
+            to_airport= route["iataCode"],
+            price= route["lowestPrice"],
+            n_days= 30,                         #Look for deals up to "n_days"
+            stopovers= 0,                       #Maximum stopovers 0 for direct flights
+            email= MY_EMAIL,
+            email_pass= EMAIL_PASS
+            )
+    except IndexError:
+        print("Couldn't find a deal.")
+        break
