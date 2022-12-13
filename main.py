@@ -6,7 +6,7 @@ MY_AIRPORT = os.environ["MY_AIRPORT"]       #Your closest airport IATA Code
 MY_EMAIL = os.environ["MY_EMAIL"]           #Your email address (sender and receiver)
 EMAIL_PASS = os.environ["EMAIL_PASS"]       #Your email app password
 API_KEY = os.environ["API_KEY"]             #kiwi.com api key
-SHEETY_END = os.environ["SHEETY_END"]       #Your google-sheet end link Sheet format: "City"/"IATA Code"/"Lowest Price"
+SHEETY_END = os.environ["SHEETY_END"]       #Your google-sheet end link. Sheet format: "City"/"IATA Code"/"Lowest Price"
 SHEETY_PASS = os.environ["SHEETY_PASS"]     #Sheety Basic Authentication password
 
 dataman = DataManager(sheetyend=SHEETY_END,sheetypass=SHEETY_PASS)
