@@ -3,6 +3,7 @@ import datetime
 from notification_manager import NotificationManager
 
 class FlightSearch:
+    """It searches for flights regarding given parameters using the Tequila API."""
 
     def __init__(
         self,
@@ -54,6 +55,8 @@ class FlightSearch:
 
 
     #------Get todays date or n_days after-----
+    """This function is only needed because the API requires 
+    the date in this format: DD/MM/YYYY and .datetime ouput is: YYYY-MM-DD"""
     def get_date(self,bool):
         if bool:
             today = str(datetime.datetime.now().date()).split("-")
@@ -62,7 +65,7 @@ class FlightSearch:
         return "/".join(today[::-1])
     #---------------------------------------------
 
-    #------Make ISO-8601 time-format easier on the eye
+    #------Convert ISO-8601 time-format to common time-format
     def format_time(self,dtime):
         cutshort = dtime[0:-5]
         n = cutshort.split("T")

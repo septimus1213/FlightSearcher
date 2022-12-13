@@ -1,6 +1,8 @@
 import smtplib
 
 class NotificationManager:
+    """It sends an email to the provided address for each deal found."""
+    
     def __init__(self,my_email,my_pass,message) -> None:
         
         with smtplib.SMTP("smtp.gmail.com",587) as connection:
